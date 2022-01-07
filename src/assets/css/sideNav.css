@@ -1,0 +1,35 @@
+.side-nav {
+  margin: 20px 100px;
+  max-width: 25%;
+  min-width: 25%;
+  padding: 10px;
+}
+
+.side-nav div {
+  border-radius: 10px;
+  margin: 5px;
+  padding: 3px 10px;
+  transition: 0.2s;
+  width: 250px;
+}
+
+.side-nav div label {
+  margin-left: 5px;
+}
+
+.side-nav div:hover {
+  background-color: rgb(212, 212, 212);
+  cursor: pointer;
+}
+
+.side-nav div label:hover {
+  cursor: pointer;
+}
+
+.side-nav div input:hover {
+  cursor: pointer;
+}
+
+.side-nav-and-results {
+  display: flex;
+}
