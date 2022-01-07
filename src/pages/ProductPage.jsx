@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
@@ -112,62 +111,73 @@ export default class ProductPage extends Component {
       return (
         <>
           <Header actualQuantity={ actualQuantity } />
-          <div className="product-container">
-            <h3 data-testid="product-detail-name">{ title }</h3>
-            <div>
+            <div className="product-section">
+            <div className="product-container">
+              <h3 data-testid="product-detail-name">{ title }</h3>
               <div>
-                <img src={ image } alt={ title } />
-              </div>
-              <div>
-                <p>
-                  { `Preço: ${price
-                    .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}` }
-                </p>
-                <p>{`Frete Grátis: ${shippingFee ? 'Sim' : 'Não'}`}</p>
-                <button
+                <div>
+                  <img src={ image } alt={ title } />
+                </div>
+                <div className="description">
+                  <div className="text-container">
+                    <p>
+                      { `Preço: ${price
+                        .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}` }
+                    </p>
+                    <p>{`Frete Grátis: ${shippingFee ? 'Sim' : 'Não'}`}</p>
+                  </div>
+                  <button
+                  className="add-button"
                   data-testid="product-detail-add-to-cart"
                   type="button"
                   onClick={ () => this.handleItemsCart(price, image, title, id) }
-                >
-                  cart
-                </button>
+                  >
+                    Comprar
+                  </button>
+                    </div>
               </div>
             </div>
-          </div>
-          <form
-            onSubmit={ (event) => {
-              event.preventDefault();
-            } }
-          >
-            <div className="email-and-rate">
-              <label htmlFor="input-email">
-                <input
-                  id="input-email"
-                  placeholder="Email"
-                  type="email"
+            </div>
+          <div className="form-container">
+            <form
+              onSubmit={ (event) => {
+                event.preventDefault();
+              } }
+              >
+              <h3>Deixe uma avaliação</h3>
+              <div className="email-and-rate">
+                <label htmlFor="input-email">
+                  <input
+                    id="input-email"
+                    placeholder="Email"
+                    type="email"
+                    required
+                  />
+                </label>
+                <div className="radios-btn">
+                  <input name="input-rate" type="radio" value="1" />
+                  <input name="input-rate" type="radio" value="2" />
+                  <input name="input-rate" type="radio" value="3" />
+                  <input name="input-rate" type="radio" value="4" />
+                  <input name="input-rate" type="radio" value="5" />
+                </div>
+
+                <textarea
+                  data-testid="product-detail-evaluation"
+                  placeholder="Mensagem (Opcional)"
+                  name="input-msg"
+                  id="input-msg"
+                  cols="30"
+                  rows="10"
                 />
-              </label>
-
-              <div className="radios-btn">
-                <input name="input-rate" type="radio" value="1" />
-                <input name="input-rate" type="radio" value="2" />
-                <input name="input-rate" type="radio" value="3" />
-                <input name="input-rate" type="radio" value="4" />
-                <input name="input-rate" type="radio" value="5" />
               </div>
 
-              <textarea
-                data-testid="product-detail-evaluation"
-                placeholder="Mensagem (Opcional)"
-                name="input-msg"
-                id="input-msg"
-                cols="30"
-                rows="10"
-              />
-            </div>
-
-            <button type="submit">Enviar</button>
-          </form>
+              <button
+                type="submit"
+                onClick={() => alert('Essa seção é apenas demonstrativa, sua funcionalidade não foi implementada! :D')}
+              >Enviar</button>
+            </form>
+          </div>
         </>
       );
     }
