@@ -1,5 +1,5 @@
 Online Store was a project made in a group at Trybe.</br>
-It was built in React, classes and state method, using single-page application with router-dom.</br>
+It was built in React, using classes and state method, single-page application with router-dom.</br>
 </br>
 It's features includes: </br>
 Consume an Mercado Livre API.</br>
