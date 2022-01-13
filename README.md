@@ -7,4 +7,4 @@ Filter for search.</br>
 A shopping cart, witch save all your items at your Local storage.</br>
 Product review section.</br>
 </br>
-Application: <a href="https://github.com/ArthurViegas/online-store" target="_blank"> Online Store </a>
+Application: <a href="https://online-store-umber.vercel.app/" target="_blank"> Online Store </a>
